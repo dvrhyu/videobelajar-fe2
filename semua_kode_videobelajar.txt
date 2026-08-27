@@ -1,0 +1,2172 @@
+==========================================
+FILE: src/app.css
+==========================================
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --orange: #ff5c00;
+  --green: #3ec163;
+  --yellow: #ffc045;
+  --text: #333333;
+  --muted: #767676;
+  --border: #eaeaea;
+  --background: #fffdf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Poppins", "Montserrat", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navbar */
+
+.app-navbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+}
+
+.brand-logo {
+  width: auto;
+  height: 34px;
+}
+
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.kategori-text {
+  color: rgba(51, 51, 51, 0.68);
+  font-weight: 500;
+}
+
+.avatar-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.mobile-toggle {
+  display: none;
+}
+
+/* Auth */
+
+.auth-wrapper {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 40px 30px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.auth-card h1 {
+  margin-bottom: 4px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.form-label {
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.form-control,
+.form-select {
+  min-height: 40px;
+  border-color: #cccccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 0.15rem rgba(255, 92, 0, 0.15);
+}
+
+.required {
+  color: #ff0000;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  color: #777777;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.phone-group {
+  display: flex;
+  gap: 8px;
+}
+
+.dial-code {
+  width: 120px;
+}
+
+.form-action {
+  margin: -4px 0 10px;
+  text-align: right;
+}
+
+.form-action a {
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.primary-auth-button,
+.secondary-auth-button,
+.google-button {
+  width: 100%;
+  min-height: 40px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.primary-auth-button {
+  border: 0;
+  background: var(--green);
+}
+
+.primary-auth-button:hover {
+  background: #32a855;
+}
+
+.secondary-auth-button {
+  margin-top: 12px;
+  border: 0;
+  background: rgba(62, 193, 99, 0.15);
+  color: var(--green);
+}
+
+.secondary-auth-button:hover {
+  background: rgba(62, 193, 99, 0.25);
+  color: var(--green);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 18px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  content: "";
+}
+
+.divider span {
+  padding: 0 16px;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  color: var(--text);
+}
+
+/* Hero */
+
+.hero-section {
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 80px 20px;
+  border-radius: 15px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/images/belajar.jpg") center / cover no-repeat;
+  color: #ffffff;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.hero-content p {
+  max-width: 720px;
+  margin: 0 auto 30px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.hero-button {
+  border: 0;
+  background: var(--green);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.hero-button:hover {
+  background: #32a855;
+}
+
+/* Courses Section & Grid Layout */
+
+.courses-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.section-header h2 {
+  margin-bottom: 5px;
+  color: #222222;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.section-header p {
+  margin-bottom: 22px;
+  color: var(--muted);
+}
+
+.tabs-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 28px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.tab-item {
+  padding: 8px 16px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-size: 15px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tab-item.active {
+  border-bottom-color: var(--orange);
+  color: var(--orange);
+  font-weight: 600;
+}
+
+/* GRID CONTAINER: Membagi 3 Kolom Kartu di Desktop */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.course-card, .card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  height: 100%;
+}
+
+.course-image, .card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.card-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.course-title, .card-title {
+  color: #222222;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.course-description, .card-description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.mentor-info, .mentor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.mentor-info img, .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mentor-name {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.mentor-role {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 0;
+}
+
+.course-footer, .card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #f3f3f3;
+  margin-top: auto;
+  background: transparent;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.stars {
+  color: #ffc107;
+  letter-spacing: -2px;
+}
+
+.course-price, .price {
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Newsletter */
+.newsletter-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto 20px;
+  max-width: 1200px;
+  padding: 80px 20px;
+  border-radius: 12px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("/images/cta.jpg") center / cover no-repeat;
+  color: #ffffff;
+  text-align: center;
+}
+
+.newsletter-content {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.newsletter-label {
+  margin-bottom: 8px;
+  color: #c1c1c1;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.newsletter-content h2 {
+  margin-bottom: 12px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.newsletter-content p {
+  margin: 0 0 32px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 6px 6px 6px 16px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.newsletter-form .form-control {
+  flex: 1;
+  border: 0;
+  outline: none;
+  font-size: 14px;
+  color: #333333;
+  padding: 0;
+  background: transparent;
+}
+
+.newsletter-form .btn {
+  border: 0;
+  border-radius: 8px;
+  background: var(--yellow);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 28px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Footer */
+
+.footer-section {
+  margin-top: 30px;
+  padding: 60px 0 30px;
+  border-top: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.footer-container {
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.footer-info {
+  max-width: 320px;
+}
+
+.footer-logo {
+  width: auto;
+  height: 35px;
+  margin-bottom: 22px;
+}
+
+.footer-info p {
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.footer-description {
+  color: #222222 !important;
+  font-weight: 700;
+}
+
+.footer-menu {
+  display: flex;
+  gap: 70px;
+}
+
+.footer-column {
+  min-width: 130px;
+}
+
+.footer-column-title {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #111111;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.footer-column-title i {
+  display: none;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.footer-links a {
+  color: #666666;
+  font-size: 14px;
+}
+
+.footer-section hr {
+  margin: 0 0 25px;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #666666;
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+  color: #333333;
+}
+
+/* Tablet (2 Kolom Kartu) */
+
+@media (max-width: 991px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mobile-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .newsletter-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-top {
+    flex-direction: column;
+  }
+}
+
+/* Mobile (1 Kolom Kartu) */
+
+@media (max-width: 576px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-card {
+    padding: 30px 20px;
+  }
+
+  .auth-card h1 {
+    font-size: 22px;
+  }
+
+  .hero-section {
+    width: calc(100% - 32px);
+    margin: 20px auto;
+    padding: 38px 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-content p {
+    font-size: 13px;
+  }
+
+  .hero-button {
+    width: 100%;
+  }
+
+  .section-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .section-header p {
+    font-size: 13px;
+  }
+
+  .newsletter-banner {
+    width: calc(100% - 0px);
+    padding: 40px 20px;
+  }
+
+  .newsletter-content h2 {
+    font-size: 25px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    padding: 0;
+    background: transparent;
+  }
+
+  .newsletter-form .form-control,
+  .newsletter-form .btn {
+    width: 100%;
+    min-height: 45px;
+    border-radius: 8px;
+  }
+
+  .footer-menu {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer-column {
+    padding: 15px 0;
+    border-bottom: 1px dotted #cccccc;
+  }
+
+  .footer-column-title {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-column-title i {
+    display: block;
+    transition: transform 0.2s ease;
+  }
+
+  .footer-links {
+    display: none;
+    margin-top: 14px;
+  }
+
+  .footer-column.open .footer-links {
+    display: flex;
+  }
+
+  .footer-column.open .footer-column-title i {
+    transform: rotate(90deg);
+  }
+
+  .footer-bottom {
+    flex-direction: column-reverse;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+.card .card-image {
+  width: 100% !important;
+  height: 190px !important;
+  object-fit: cover !important;
+  border-radius: 8px 8px 0 0;
+}
+
+
+.card {
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}-e 
+
+
+==========================================
+FILE: src/components/HeroSection.jsx
+==========================================
+import React from 'react';
+
+export default function HeroSection() {
+  const handleScrollToCourses = () => {
+    const coursesSection = document.getElementById('koleksi-kelas');
+    if (coursesSection) {
+      coursesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section className="hero-section">
+      <div className="hero-content">
+        <h1>Revolusi Pembelajaran: Temukan Ilmu Baru melalui Platform Video Interaktif!</h1>
+        <p>
+          Temukan ilmu baru yang menarik dan mendalam melalui koleksi video pembelajaran berkualitas tinggi. Tidak hanya itu, Anda juga dapat berpartisipasi dalam latihan interaktif yang akan meningkatkan pemahaman Anda.
+        </p>
+        <button
+          type="button"
+          className="hero-button"
+          onClick={handleScrollToCourses}
+        >
+          Temukan Video Course Untuk Dipelajari!
+        </button>
+      </div>
+    </section>
+  );
+}-e 
+
+
+==========================================
+FILE: src/components/CourseCard.jsx
+==========================================
+import React from 'react';
+
+export default function CourseCard({
+  image,
+  title,
+  description,
+  mentorImage,
+  mentorName,
+  mentorRole,
+  price,
+}) {
+  return (
+    <div className="card">
+      <img src={image} alt={title} className="card-image" />
+      
+      <div className="card-body">
+        <h3 className="card-title">{title}</h3>
+        <p className="card-description">{description}</p>
+        
+        <div className="mentor-info">
+          <img src={mentorImage} alt={mentorName} className="mentor-avatar" />
+          <div>
+            <h4 className="mentor-name">{mentorName}</h4>
+            <p className="mentor-role">{mentorRole}</p>
+          </div>
+        </div>
+
+        <div className="card-footer">
+          <div className="rating">
+            <span>⭐⭐⭐⭐⭐ 3.5 (96)</span>
+          </div>
+          <div className="price">{price}</div>
+        </div>
+
+       
+      </div>
+    </div>
+  );
+}-e 
+
+
+==========================================
+FILE: src/components/NewsletterBanner.jsx
+==========================================
+import React, { useState } from 'react';
+
+export default function NewsletterBanner() {
+  const [email, setEmail] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email.trim() !== '') {
+      setShowAlert(true);
+      setEmail('');
+    }
+  };
+
+  return (
+    <>
+      <div className="newsletter-banner">
+        <div className="newsletter-content">
+          <p className="newsletter-label">NEWSLETTER</p>
+          <h2>Mau Belajar Lebih Banyak?</h2>
+          <p>
+            Daftarkan dirimu untuk mendapatkan informasi terbaru dan penawaran spesial dari program-program terbaik videobelajar.id
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="newsletter-form">
+          <input
+            type="email"
+            placeholder="Masukkan Emailmu"
+            className="form-control"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <button type="submit" className="btn">
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+      {/* Pop-up Notifikasi Sederhana */}
+      {showAlert && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 99999,
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: '#fff',
+              padding: '28px 32px',
+              borderRadius: '12px',
+              textAlign: 'center',
+              boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
+              maxWidth: '360px',
+              width: '90%',
+            }}
+          >
+            <div style={{ fontSize: '40px', marginBottom: '12px' }}>🎉</div>
+            <h3 style={{ color: '#222', fontSize: '20px', fontWeight: '700', marginBottom: '8px' }}>
+              Berhasil subscribe!
+            </h3>
+            <p style={{ color: '#666', fontSize: '14px', marginBottom: '20px' }}>
+              Terima kasih telah berlangganan newsletter hariesok.id
+            </p>
+            <button
+              type="button"
+              className="primary-auth-button"
+              onClick={() => setShowAlert(false)}
+              style={{ color: '#fff', cursor: 'pointer' }}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}-e 
+
+
+==========================================
+FILE: src/components/SectionHeader.jsx
+==========================================
+export default function SectionHeader() {
+  return (
+    <div className="section-header">
+      <h2>Koleksi Video Pembelajaran Unggulan</h2>
+      <p>Jelajahi Dunia Pengetahuan Melalui Pilihan Kami</p>
+    </div>
+  );
+}-e 
+
+
+==========================================
+FILE: src/components/Footer.jsx
+==========================================
+import React from 'react';
+
+export default function Footer() {
+  return (
+    <footer className="footer-section">
+      <div className="footer-container">
+        <div className="footer-top">
+          {/* SISI KIRI: LOGO & ALAMAT */}
+          <div className="footer-info">
+            <img src="/images/Logo.svg" alt="logo" className="footer-logo" />
+            <p className="footer-description">
+              Gali Potensi Anda Melalui Pembelajaran Video di hariesok.id!
+            </p>
+            <p>JL. Usman Effendi No. 50, Malang</p>
+            <p>+62-877-7123-1234</p>
+          </div>
+
+          {/* SISI KANAN: MENU LINK */}
+          <div className="footer-menu">
+            <div className="footer-column">
+              <button type="button" className="footer-column-title">
+                Kategori <i className="fa-solid fa-chevron-right"></i>
+              </button>
+              <div className="footer-links">
+                <a href="#">Digital & Teknologi</a>
+                <a href="#">Pemasaran</a>
+                <a href="#">Manajemen Bisnis</a>
+                <a href="#">Pengembangan Diri</a>
+                <a href="#">Desain</a>
+              </div>
+            </div>
+
+            <div className="footer-column">
+              <button type="button" className="footer-column-title">
+                Perusahaan <i className="fa-solid fa-chevron-right"></i>
+              </button>
+              <div className="footer-links">
+                <a href="#">Tentang Kami</a>
+                <a href="#">FAQ</a>
+                <a href="#">Kebijaksanaan Privasi</a>
+                <a href="#">Ketentuan Layanan</a>
+                <a href="#">Bantuan</a>
+              </div>
+            </div>
+
+            <div className="footer-column">
+              <button type="button" className="footer-column-title">
+                Komunitas <i className="fa-solid fa-chevron-right"></i>
+              </button>
+              <div className="footer-links">
+                <a href="#">Tips Sukses</a>
+                <a href="#">Blog</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        {/* FOOTER BWAH: COPYRIGHT & SOCIAL */}
+        <div className="footer-bottom">
+          <p>@ 2026 Devi Oktavia Rahayu. All Right Reserved.</p>
+          <div className="social-icons">
+            <a href="www.linkedin.com" aria-label="Linkedin"><i className="fa-brands fa-linkedin-in"></i></a>
+            <a href="www.facebook.com" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+            <a href="www.instagram.com" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
+            <a href="www.twitter.com" aria-label="Twitter"><i className="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}-e 
+
+
+==========================================
+FILE: src/components/AppNavbar.jsx
+==========================================
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+// Tambahkan prop isAuthPage (default-nya false)
+export default function AppNavbar({ isAuthPage = false }) {
+  const navigate = useNavigate();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem('userProfile');
+    localStorage.removeItem('isLoggedIn');
+    setIsDropdownOpen(false);
+    navigate('/login');
+  };
+
+  return (
+    <header className="navbar" style={{ padding: '16px 40px', backgroundColor: '#fff', borderBottom: '1px solid #eee', position: 'relative' }}>
+      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        
+        {/* LOGO (Selalu tampil di semua halaman) */}
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <img src="/images/Logo.svg" alt="videobelajar" style={{ height: '36px' }} />
+        </Link>
+
+        {/* JIKA BUKAN AUTH PAGE: Tampilkan menu Kategori & Avatar */}
+        {!isAuthPage && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '24px', position: 'relative' }}>
+            <span style={{ fontSize: '14px', fontWeight: '500', color: '#666', cursor: 'pointer' }}>Kategori</span>
+
+            {/* AVATAR PROFIL & DROPDOWN */}
+            <div style={{ position: 'relative' }}>
+              <img
+                src="/images/Avatar.png"
+                alt="Profil User"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  cursor: 'pointer',
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+              />
+
+              {/* DROPDOWN MENU */}
+              {isDropdownOpen && (
+                <div
+                  style={{
+                    position: 'absolute',
+                    right: 0,
+                    top: '52px',
+                    backgroundColor: '#fff',
+                    boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                    borderRadius: '10px',
+                    width: '180px',
+                    border: '1px solid #f0f0f0',
+                    zIndex: 1000,
+                    overflow: 'hidden'
+                  }}
+                >
+                  <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+                    <li style={{ borderBottom: '1px solid #f5f5f5' }}>
+                      <Link
+                        to="/profile"
+                        onClick={() => setIsDropdownOpen(false)}
+                        style={{ display: 'block', padding: '12px 16px', color: '#333', textDecoration: 'none', fontSize: '14px', fontWeight: '500' }}
+                      >
+                        Profil Saya
+                      </Link>
+                    </li>
+                    <li style={{ borderBottom: '1px solid #f5f5f5' }}>
+                      <Link
+                        to="/my-class"
+                        onClick={() => setIsDropdownOpen(false)}
+                        style={{ display: 'block', padding: '12px 16px', color: '#333', textDecoration: 'none', fontSize: '14px', fontWeight: '500' }}
+                      >
+                        Kelas Saya
+                      </Link>
+                    </li>
+                    <li style={{ borderBottom: '1px solid #f5f5f5' }}>
+                      <Link
+                        to="/my-orders"
+                        onClick={() => setIsDropdownOpen(false)}
+                        style={{ display: 'block', padding: '12px 16px', color: '#333', textDecoration: 'none', fontSize: '14px', fontWeight: '500' }}
+                      >
+                        Pesanan Saya
+                      </Link>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        onClick={handleLogout}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justify: 'space-between',
+                          width: '100%',
+                          padding: '12px 16px',
+                          color: '#FF5C38',
+                          background: 'none',
+                          border: 'none',
+                          fontSize: '14px',
+                          fontWeight: '500',
+                          cursor: 'pointer',
+                          textAlign: 'left'
+                        }}
+                      >
+                        Keluar <i className="fa-solid fa-right-from-bracket"></i>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+      </div>
+    </header>
+  );
+}-e 
+
+
+==========================================
+FILE: src/components/PasswordField.jsx
+==========================================
+import Form from "react-bootstrap/Form";
+import { useState } from "react";
+
+export default function PasswordField({
+  id,
+  label,
+  value,
+  onChange,
+  placeholder = "",
+}) {
+  const [showPassword, setShowPassword] = useState(false);
+
+  return (
+    <Form.Group className="mb-3">
+      <Form.Label htmlFor={id}>
+        {label} <span className="required">*</span>
+      </Form.Label>
+
+      <div className="password-wrapper">
+        <Form.Control
+          id={id}
+          name={id}
+          type={showPassword ? "text" : "password"}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          required
+        />
+
+        <button
+          type="button"
+          className="password-toggle"
+          onClick={() => setShowPassword(!showPassword)}
+          aria-label={showPassword ? "Sembunyikan password" : "Tampilkan password"}
+        >
+          <i className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`} />
+        </button>
+      </div>
+    </Form.Group>
+  );
+}-e 
+
+
+==========================================
+FILE: src/components/AuthForm.jsx
+==========================================
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+
+import PasswordField from "./PasswordField";
+
+export default function AuthForm({ type }) {
+  const isLogin = type === "login";
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    gender: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const [dialCode, setDialCode] = useState("+62");
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (
+      !isLogin &&
+      formData.password !== formData.confirmPassword
+    ) {
+      alert("Konfirmasi kata sandi tidak sama.");
+      return;
+    }
+
+    alert(
+      isLogin
+        ? "Login berhasil untuk prototype statis."
+        : "Registrasi berhasil untuk prototype statis."
+    );
+  };
+
+  return (
+    <div className={isLogin ? "auth-card login-card" : "auth-card register-card"}>
+      <h1>{isLogin ? "Masuk ke Akun" : "Pendaftaran Akun"}</h1>
+
+      <p className="subtitle">
+        {isLogin
+          ? "Yuk, lanjutin belajarmu di videobelajar"
+          : "Yuk, daftarkan akunmu sekarang juga!"}
+      </p>
+
+      <Form onSubmit={handleSubmit}>
+        {!isLogin && (
+          <Form.Group className="mb-3">
+            <Form.Label htmlFor="name">
+              Nama Lengkap <span className="required">*</span>
+            </Form.Label>
+
+            <Form.Control
+              id="name"
+              name="name"
+              type="text"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
+        )}
+
+        <Form.Group className="mb-3">
+          <Form.Label htmlFor={`${type}-email`}>
+            Email <span className="required">*</span>
+          </Form.Label>
+
+          <Form.Control
+            id={`${type}-email`}
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Masukkan email"
+            autoComplete="email"
+            required
+          />
+        </Form.Group>
+
+        {!isLogin && (
+          <>
+            <Form.Group className="mb-3 gender-field">
+              <Form.Label htmlFor="gender">
+                Jenis Kelamin <span className="required">*</span>
+              </Form.Label>
+
+              <Form.Select
+                id="gender"
+                name="gender"
+                value={formData.gender}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Pilih Jenis Kelamin</option>
+                <option value="pria">Pria</option>
+                <option value="wanita">Wanita</option>
+              </Form.Select>
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="phone">
+                No. Hp <span className="required">*</span>
+              </Form.Label>
+
+              <div className="phone-group">
+                <Form.Select
+                  value={dialCode}
+                  onChange={(event) => setDialCode(event.target.value)}
+                  className="dial-code"
+                >
+                  <option value="+62">🇮🇩 +62</option>
+                  <option value="+65">🇸🇬 +65</option>
+                  <option value="+60">🇲🇾 +60</option>
+                  <option value="+66">🇹🇭 +66</option>
+                </Form.Select>
+
+                <Form.Control
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Masukkan nomor HP"
+                  required
+                />
+              </div>
+            </Form.Group>
+          </>
+        )}
+
+        <PasswordField
+          id={`${type}-password`}
+          label={isLogin ? "Password" : "Kata Sandi"}
+          value={formData.password}
+          onChange={(event) =>
+            setFormData((previous) => ({
+              ...previous,
+              password: event.target.value,
+            }))
+          }
+          placeholder="Masukkan password"
+        />
+
+        {!isLogin && (
+          <PasswordField
+            id="confirm-password"
+            label="Konfirmasi Kata Sandi"
+            value={formData.confirmPassword}
+            onChange={(event) =>
+              setFormData((previous) => ({
+                ...previous,
+                confirmPassword: event.target.value,
+              }))
+            }
+            placeholder="Ulangi password"
+          />
+        )}
+
+        <div className="form-action">
+          <a href="#forgot-password">Lupa Password?</a>
+        </div>
+
+        <Button type="submit" className="primary-auth-button">
+          {isLogin ? "Masuk" : "Daftar"}
+        </Button>
+
+        <Button
+          as={Link}
+          to={isLogin ? "/register" : "/login"}
+          type="button"
+          className="secondary-auth-button"
+        >
+          {isLogin ? "Daftar" : "Masuk"}
+        </Button>
+
+        <div className="divider">
+          <span>Atau</span>
+        </div>
+
+        <Button type="button" className="google-button">
+          <i className="bi bi-google" />
+          Masuk dengan Google
+        </Button>
+      </Form>
+    </div>
+  );
+}-e 
+
+
+==========================================
+FILE: src/main.jsx
+==========================================
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+
+import "bootstrap/dist/css/bootstrap.min.css"; 
+import "./app.css";
+
+import App from "./App.jsx";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);-e 
+
+
+==========================================
+FILE: src/App.jsx
+==========================================
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ProfilePage from './pages/ProfilePage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage'; 
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} /> 
+      <Route path="/profile" element={<ProfilePage />} />
+    </Routes>
+  );
+}-e 
+
+
+==========================================
+FILE: src/data/courses.js
+==========================================
+const defaultDescription =
+  "Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum terbaik";
+
+export const courses = [
+  {
+    id: 1,
+    image: "/assets/img/course1.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-2.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 2,
+    image: "/assets/img/course2.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-3.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 3,
+    image: "/assets/img/course3.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-3.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 4,
+    image: "/assets/img/course4.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-4.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 5,
+    image: "/assets/img/course5.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-5.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 6,
+    image: "/assets/img/course6.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-6.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 7,
+    image: "/assets/img/course7.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-7.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 8,
+    image: "/assets/img/course8.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-8.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 9,
+    image: "/assets/img/course9.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-9.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+];-e 
+
+
+==========================================
+FILE: src/pages/HomePage.jsx
+==========================================
+import React, { useState } from 'react';
+
+import AppNavbar from '../components/AppNavbar';
+import HeroSection from '../components/HeroSection';
+import CourseCard from '../components/CourseCard';
+import NewsletterBanner from '../components/NewsletterBanner'; // Menggunakan komponen Newsletter tersendiri jika ada
+import Footer from '../components/Footer';
+
+const initialCourses = [
+  {
+    id: 1,
+    image: '/images/course1.png',
+    title: 'Big 4 Auditor Financial Analyst',
+    description: 'Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum terbaik',
+    mentorImage: '/images/Avatar-2.png',
+    mentorName: 'Jenna Ortega',
+    mentorRole: 'Senior Accountant di Gojek',
+    price: 'Rp 300K',
+    category: 'Pemasaran',
+  },
+  {
+    id: 2,
+    image: '/images/course2.png',
+    title: 'Big 4 Auditor Financial Analyst',
+    description: 'Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum terbaik',
+    mentorImage: '/images/Avatar-3.png',
+    mentorName: 'Jenna Ortega',
+    mentorRole: 'Senior Accountant di Gojek',
+    price: 'Rp 300K',
+    category: 'Desain',
+  },
+  {
+    id: 3,
+    image: '/images/course3.png',
+    title: 'Big 4 Auditor Financial Analyst',
+    description: 'Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum terbaik',
+    mentorImage: '/images/Avatar-3.png',
+    mentorName: 'Jenna Ortega',
+    mentorRole: 'Senior Accountant di Gojek',
+    price: 'Rp 300K',
+    category: 'Pengembangan Diri',
+  },
+  {
+    id: 4,
+    image: '/images/course4.png',
+    title: 'Big 4 Auditor Financial Analyst',
+    description: 'Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum terbaik',
+    mentorImage: '/images/Avatar-4.png',
+    mentorName: 'Jenna Ortega',
+    mentorRole: 'Senior Accountant di Gojek',
+    price: 'Rp 300K',
+    category: 'Bisnis',
+  },
+  {
+    id: 5,
+    image: '/images/course5.png',
+    title: 'Big 4 Auditor Financial Analyst',
+    description: 'Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum terbaik',
+    mentorImage: '/images/Avatar-5.png',
+    mentorName: 'Jenna Ortega',
+    mentorRole: 'Senior Accountant di Gojek',
+    price: 'Rp 300K',
+    category: 'Pemasaran',
+  },
+  {
+    id: 6,
+    image: '/images/course6.png',
+    title: 'Big 4 Auditor Financial Analyst',
+    description: 'Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum terbaik',
+    mentorImage: '/images/Avatar-6.png',
+    mentorName: 'Jenna Ortega',
+    mentorRole: 'Senior Accountant di Gojek',
+    price: 'Rp 300K',
+    category: 'Desain',
+  },
+  {
+    id: 7,
+    image: '/images/course7.png',
+    title: 'Big 4 Auditor Financial Analyst',
+    description: 'Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum terbaik',
+    mentorImage: '/images/Avatar-7.png',
+    mentorName: 'Jenna Ortega',
+    mentorRole: 'Senior Accountant di Gojek',
+    price: 'Rp 300K',
+    category: 'Pengembangan Diri',
+  },
+  {
+    id: 8,
+    image: '/images/course8.png',
+    title: 'Big 4 Auditor Financial Analyst',
+    description: 'Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum terbaik',
+    mentorImage: '/images/Avatar-8.png',
+    mentorName: 'Jenna Ortega',
+    mentorRole: 'Senior Accountant di Gojek',
+    price: 'Rp 300K',
+    category: 'Bisnis',
+  },
+  {
+    id: 9,
+    image: '/images/course9.png',
+    title: 'Big 4 Auditor Financial Analyst',
+    description: 'Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum terbaik',
+    mentorImage: '/images/Avatar-9.png',
+    mentorName: 'Jenna Ortega',
+    mentorRole: 'Senior Accountant di Gojek',
+    price: 'Rp 300K',
+    category: 'Pemasaran',
+  },
+];
+
+export default function HomePage() {
+  const [activeTab, setActiveTab] = useState('Semua Kelas');
+
+  const categories = ['Semua Kelas', 'Pemasaran', 'Desain', 'Pengembangan Diri', 'Bisnis'];
+
+  const filteredCourses =
+    activeTab === 'Semua Kelas'
+      ? initialCourses
+      : initialCourses.filter((item) => item.category === activeTab);
+
+  return (
+    <div>
+      <AppNavbar />
+
+      <main className="main-content">
+        <HeroSection />
+
+        <section id="koleksi-kelas" className="courses-section">
+          <div className="container">
+            <div>
+              <h2>Koleksi Video Pembelajaran Unggulan</h2>
+              <p>Jelajahi Dunia Pengetahuan Melalui Pilihan Kami</p>
+            </div>
+          </div>
+
+          <div className="tabs-container">
+            {categories.map((tab) => (
+              <button
+                key={tab}
+                className={`tab-item ${activeTab === tab ? 'active' : ''}`}
+                onClick={() => setActiveTab(tab)}
+                type="button"
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          <div className="courses-grid">
+            {filteredCourses.map((course) => (
+              <CourseCard key={course.id} {...course} />
+            ))}
+          </div>
+
+          <NewsletterBanner />
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}-e 
+
+
+==========================================
+FILE: src/pages/LoginPage.jsx
+==========================================
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import AppNavbar from '../components/AppNavbar'; // 1. Import AppNavbar
+
+export default function LoginPage() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem('isLoggedIn', 'true');
+    navigate('/');
+  };
+
+  return (
+    <div style={{ backgroundColor: '#FFFDF8', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      
+      {/* 2. Panggil AppNavbar dengan prop isAuthPage */}
+      <AppNavbar isAuthPage={true} />
+
+      <main className="auth-wrapper" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="container auth-container">
+          <div className="auth-card">
+            <h1>Masuk ke Akun</h1>
+            <p className="subtitle">Yuk, lanjutin belajarmu di videobelajar</p>
+
+            <form onSubmit={handleSubmit}>
+              <div style={{ marginBottom: '16px' }}>
+                <label className="form-label">
+                  E-mail <span className="required">*</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  className="form-control"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="nama123@email.com"
+                  required
+                />
+              </div>
+
+              <div style={{ marginBottom: '12px' }}>
+                <label className="form-label">
+                  Kata Sandi <span className="required">*</span>
+                </label>
+                <input
+                  type="password"
+                  name="password"
+                  className="form-control"
+                  value={formData.password}
+                  onChange={handleChange}
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+
+              <div className="form-action">
+                <a href="#forgot">Lupa Password?</a>
+              </div>
+
+              <button type="submit" className="primary-auth-button">
+                Masuk
+              </button>
+
+              <button
+                type="button"
+                className="secondary-auth-button"
+                onClick={() => navigate('/register')}
+              >
+                Daftar
+              </button>
+
+              <div className="divider">
+                <span>atau</span>
+              </div>
+
+              <button type="button" className="google-button">
+                <img
+                  src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                  alt="Google"
+                  style={{ width: '18px', height: '18px' }}
+                />
+                Masuk dengan Google
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}-e 
+
+
+==========================================
+FILE: src/pages/RegisterPage.jsx
+==========================================
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import AppNavbar from '../components/AppNavbar'; // 1. Import AppNavbar
+
+export default function RegisterPage() {
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/login');
+  };
+
+  return (
+    <div style={{ backgroundColor: '#FFFDF8', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      
+      {/* 2. Gunakan AppNavbar reusable di sini */}
+      <AppNavbar isAuthPage={true} />
+
+      {/* FORM REGISTER CARD */}
+      <main className="auth-wrapper" style={{ flex: 1, padding: '40px 0' }}>
+        <div className="auth-container">
+          <div className="auth-card">
+            <h1>Pendaftaran Akun</h1>
+            <p className="subtitle">Yuk, daftarkan akunmu sekarang juga!</p>
+
+            <form onSubmit={handleSubmit}>
+              {/* Nama Lengkap */}
+              <div style={{ marginBottom: '16px' }}>
+                <label className="form-label">
+                  Nama Lengkap <span className="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  style={{ width: '100%' }}
+                  required
+                />
+              </div>
+
+              {/* Email */}
+              <div style={{ marginBottom: '16px' }}>
+                <label className="form-label">
+                  E-Mail <span className="required">*</span>
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  style={{ width: '100%' }}
+                  required
+                />
+              </div>
+
+              {/* Jenis Kelamin */}
+              <div style={{ marginBottom: '16px' }}>
+                <label className="form-label">
+                  Jenis Kelamin <span className="required">*</span>
+                </label>
+                <select className="form-select" style={{ width: '100%' }} required>
+                  <option value="">Pilih Jenis Kelamin</option>
+                  <option value="Laki-laki">Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+
+              {/* No Hp */}
+              <div style={{ marginBottom: '16px' }}>
+                <label className="form-label">
+                  No. Hp <span className="required">*</span>
+                </label>
+                <div className="phone-group">
+                  <select className="form-select dial-code">
+                    <option value="+62">🇮🇩 +62</option>
+                  </select>
+                  <input
+                    type="tel"
+                    className="form-control"
+                    style={{ flex: 1 }}
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Kata Sandi */}
+              <div style={{ marginBottom: '16px' }}>
+                <label className="form-label">
+                  Kata Sandi <span className="required">*</span>
+                </label>
+                <div className="password-wrapper">
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    className="form-control"
+                    style={{ width: '100%' }}
+                    required
+                  />
+                  <button
+                    type="button"
+                    className="password-toggle"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    <i className={`fa-regular ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`}></i>
+                  </button>
+                </div>
+              </div>
+
+              {/* Konfirmasi Kata Sandi */}
+              <div style={{ marginBottom: '8px' }}>
+                <label className="form-label">
+                  Konfirmasi Kata Sandi <span className="required">*</span>
+                </label>
+                <div className="password-wrapper">
+                  <input
+                    type={showConfirmPassword ? 'text' : 'password'}
+                    className="form-control"
+                    style={{ width: '100%' }}
+                    required
+                  />
+                  <button
+                    type="button"
+                    className="password-toggle"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  >
+                    <i className={`fa-regular ${showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'}`}></i>
+                  </button>
+                </div>
+              </div>
+
+              <div className="form-action">
+                <a href="#forgot">Lupa Password?</a>
+              </div>
+
+              {/* Tombol Aksi */}
+              <button type="submit" className="primary-auth-button" style={{ color: '#fff', cursor: 'pointer' }}>
+                Daftar
+              </button>
+
+              <button
+                type="button"
+                className="secondary-auth-button"
+                onClick={() => navigate('/login')}
+                style={{ cursor: 'pointer' }}
+              >
+                Masuk
+              </button>
+
+              <div className="divider">
+                <span>Atau</span>
+              </div>
+
+              <button type="button" className="google-button" style={{ cursor: 'pointer' }}>
+                <img
+                  src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                  alt="Google"
+                  style={{ width: '18px', height: '18px' }}
+                />
+                Masuk dengan Google
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}-e 
+
+
+==========================================
+FILE: src/pages/ProfilePage.jsx
+==========================================
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
+
+export default function ProfilePage() {
+  const navigate = useNavigate();
+
+  // State form profil
+  const [formData, setFormData] = useState({
+    name: 'Devi Oktavia',
+    email: 'dvrhyu@gmail.com',
+    gender: 'Perempuan',
+    phone: '827627',
+    password: '',
+    confirmPassword: '',
+  });
+
+  // 1. Ambil data registrasi dari localStorage saat halaman dibuka
+  useEffect(() => {
+    const savedUser = localStorage.getItem('user');
+    if (savedUser) {
+      const parsed = JSON.parse(savedUser);
+      setFormData((prev) => ({
+        ...prev,
+        name: parsed.name || prev.name,
+        email: parsed.email || prev.email,
+        phone: parsed.phone || prev.phone,
+        gender: parsed.gender || prev.gender,
+      }));
+    }
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // 2. Simpan perubahan profil kembali ke localStorage
+  const handleSave = (e) => {
+    e.preventDefault();
+    const updatedUser = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      gender: formData.gender,
+    };
+    localStorage.setItem('user', JSON.stringify(updatedUser));
+    alert('Profil berhasil diperbarui!');
+  };
+
+  const handleReset = () => {
+    setFormData({
+      name: '',
+      email: '',
+      gender: 'Perempuan',
+      phone: '',
+      password: '',
+      confirmPassword: '',
+    });
+  };
+
+  return (
+    <div style={{ backgroundColor: '#FFFDF8', minHeight: '100vh' }}>
+      {/* NAVBAR ATAS */}
+      <header className="app-navbar" style={{ padding: '16px 40px', backgroundColor: '#fff', borderBottom: '1px solid #eee' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
+          <Link to="/">
+            <img src="/images/Logo.svg" alt="videobelajar" style={{ height: '38px' }} />
+          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+            <span style={{ color: '#666', fontWeight: '500' }}>Kategori</span>
+            <img src="/images/Avatar.png" alt="avatar" className="avatar-img" style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }} />
+          </div>
+        </div>
+      </header>
+
+      {/* CONTAINER KONTEN UTAMA */}
+      <main style={{ maxWidth: '1200px', margin: '40px auto', padding: '0 20px', display: 'flex', gap: '40px', alignItems: 'flex-start' }}>
+        
+        {/* SIDEBAR KIRI */}
+        <aside style={{ width: '280px' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: '700', color: '#222', margin: '0 0 4px 0' }}>Ubah Profile</h2>
+          <p style={{ color: '#888', fontSize: '14px', margin: '0 0 24px 0' }}>Ubah Data Diri Anda</p>
+
+          <div style={{ backgroundColor: '#fff', borderRadius: '12px', border: '1px solid #eaeaea', padding: '12px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <button type="button" style={{ display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '12px 16px', background: '#FFFDF0', border: '1px solid #FFC045', borderRadius: '8px', color: '#FF5C00', fontWeight: '600', cursor: 'pointer', textAlign: 'left' }}>
+              <i className="fa-regular fa-user"></i> Profile
+            </button>
+            <button type="button" style={{ display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '12px 16px', background: 'transparent', border: 'none', borderRadius: '8px', color: '#777', fontWeight: '500', cursor: 'pointer', textAlign: 'left' }}>
+              <i className="fa-regular fa-bookmark"></i> Kelas Saya
+            </button>
+            <button type="button" style={{ display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '12px 16px', background: 'transparent', border: 'none', borderRadius: '8px', color: '#777', fontWeight: '500', cursor: 'pointer', textAlign: 'left' }}>
+              <i className="fa-solid fa-cart-shopping"></i> Pesanan Saya
+            </button>
+          </div>
+        </aside>
+
+        {/* KARTU FORM KANAN */}
+        <section style={{ flex: 1, backgroundColor: '#fff', border: '1px solid #eaeaea', borderRadius: '16px', padding: '36px' }}>
+          
+          {/* HEADER PROFIL & FOTO */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', paddingBottom: '24px', borderBottom: '1px solid #eaeaea', marginBottom: '28px' }}>
+            <img src="/images/avatar.jpg" alt="profile" style={{ width: '80px', height: '80px', borderRadius: '12px', objectFit: 'cover' }} />
+            <div>
+              <h3 style={{ fontSize: '20px', fontWeight: '700', margin: '0 0 4px 0', color: '#222' }}>{formData.name}</h3>
+              <p style={{ color: '#666', margin: '0 0 8px 0', fontSize: '14px' }}>{formData.email}</p>
+              <button type="button" style={{ background: 'transparent', border: 'none', color: '#FF5C00', fontWeight: '600', fontSize: '13px', cursor: 'pointer', padding: 0 }}>
+                Ganti Foto Profile
+              </button>
+            </div>
+          </div>
+
+          {/* FORM UBAH DATA */}
+          <form onSubmit={handleSave}>
+            {/* Nama Lengkap */}
+            <div style={{ marginBottom: '20px' }}>
+              <label className="form-label">Nama Lengkap</label>
+              <input type="text" name="name" className="form-control" style={{ width: '100%' }} value={formData.name} onChange={handleChange} />
+            </div>
+
+            {/* E-Mail */}
+            <div style={{ marginBottom: '20px' }}>
+              <label className="form-label">E-Mail</label>
+              <input type="email" name="email" className="form-control" style={{ width: '100%' }} value={formData.email} onChange={handleChange} />
+            </div>
+
+            {/* Jenis Kelamin */}
+            <div style={{ marginBottom: '20px' }}>
+              <label className="form-label">Jenis Kelamin</label>
+              <select name="gender" className="form-select" style={{ width: '100%' }} value={formData.gender} onChange={handleChange}>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </div>
+
+            {/* No.Hp */}
+            <div style={{ marginBottom: '20px' }}>
+              <label className="form-label">No.Hp</label>
+              <div className="phone-group">
+                <select className="form-select dial-code">
+                  <option value="+62">🇮🇩 +62</option>
+                </select>
+                <input type="tel" name="phone" className="form-control" style={{ flex: 1 }} value={formData.phone} onChange={handleChange} />
+              </div>
+            </div>
+
+            {/* Password Baru */}
+            <div style={{ marginBottom: '20px' }}>
+              <label className="form-label">Password Baru</label>
+              <div className="password-wrapper">
+                <input type="password" name="password" className="form-control" style={{ width: '100%' }} placeholder="Masukkan Password" value={formData.password} onChange={handleChange} />
+                <button type="button" className="password-toggle"><i className="fa-regular fa-eye-slash"></i></button>
+              </div>
+            </div>
+
+            {/* Konfirmasi Password Baru */}
+            <div style={{ marginBottom: '32px' }}>
+              <label className="form-label">Konfirmasi Password Baru</label>
+              <div className="password-wrapper">
+                <input type="password" name="confirmPassword" className="form-control" style={{ width: '100%' }} placeholder="Masukkan Konfirmasi Password" value={formData.confirmPassword} onChange={handleChange} />
+                <button type="button" className="password-toggle"><i className="fa-regular fa-eye-slash"></i></button>
+              </div>
+            </div>
+
+            {/* TOMBOL HAPUS & SIMPAN */}
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '16px' }}>
+              <button type="button" onClick={handleReset} style={{ backgroundColor: '#FF5C38', color: '#fff', border: 'none', borderRadius: '8px', padding: '12px 28px', fontWeight: '600', cursor: 'pointer' }}>
+                Hapus
+              </button>
+              <button type="submit" style={{ backgroundColor: '#3EC163', color: '#fff', border: 'none', borderRadius: '8px', padding: '12px 28px', fontWeight: '600', cursor: 'pointer' }}>
+                Simpan
+              </button>
+            </div>
+          </form>
+
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}-e 
+
+

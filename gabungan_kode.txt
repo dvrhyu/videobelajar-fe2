@@ -1,0 +1,744 @@
+import Button from "react-bootstrap/Button";
+
+export default function HeroSection() {
+  return (
+    <section className="hero-section">
+      <div className="hero-content">
+        <h1>
+          Revolusi Pembelajaran: Temukan Ilmu Baru Melalui Platform Video
+          Interaktif!
+        </h1>
+
+        <p>
+          Temukan ilmu baru yang menarik dan mendalam melalui koleksi video
+          pembelajaran berkualitas tinggi. Tidak hanya itu, Anda juga dapat
+          berpartisipasi dalam latihan interaktif yang akan meningkatkan
+          pemahaman Anda.
+        </p>
+
+        <Button href="#koleksi-kelas" className="hero-button">
+          Temukan Video Course untuk Dipelajari!
+        </Button>
+      </div>
+    </section>
+  );
+}import Card from "react-bootstrap/Card";
+
+export default function CourseCard({
+  image,
+  title,
+  description,
+  mentorImage,
+  mentorName,
+  mentorRole,
+  price,
+}) {
+  return (
+    <Card className="course-card h-100">
+      <Card.Img
+        variant="top"
+        src={image}
+        alt={title}
+        className="course-image"
+      />
+
+      <Card.Body className="d-flex flex-column">
+        <Card.Title className="course-title">{title}</Card.Title>
+
+        <Card.Text className="course-description">
+          {description}
+        </Card.Text>
+
+        <div className="mentor-info mt-auto">
+          <img src={mentorImage} alt={mentorName} />
+
+          <div>
+            <p className="mentor-name">{mentorName}</p>
+            <p className="mentor-role">{mentorRole}</p>
+          </div>
+        </div>
+
+        <div className="course-footer">
+          <div className="rating">
+            <span className="stars">★★★★★</span>
+            <span>3.5 (96)</span>
+          </div>
+
+          <span className="course-price">{price}</span>
+        </div>
+      </Card.Body>
+    </Card>
+  );
+}import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+
+export default function NewsletterBanner() {
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = () => {
+    if (!email) {
+      alert("Silakan masukkan email terlebih dahulu.");
+      return;
+    }
+
+    alert("Terima kasih sudah subscribe.");
+    setEmail("");
+  };
+
+  return (
+    <section className="newsletter-banner" id="newsletter">
+      <div className="newsletter-content">
+        <p className="newsletter-label">Newsletter</p>
+
+        <h2>Mau Belajar Lebih Banyak?</h2>
+
+        <p>
+          Daftarkan dirimu untuk mendapatkan informasi terbaru dan penawaran
+          spesial dari program-program terbaik hariesok.id
+        </p>
+      </div>
+
+      <div className="newsletter-form">
+        <Form.Control
+          type="email"
+          placeholder="Masukkan Emailmu"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        />
+
+        <Button onClick={handleSubscribe}>Subscribe</Button>
+      </div>
+    </section>
+  );
+}export default function SectionHeader() {
+  return (
+    <div className="section-header">
+      <h2>Koleksi Video Pembelajaran Unggulan</h2>
+      <p>Jelajahi Dunia Pengetahuan Melalui Pilihan Kami</p>
+    </div>
+  );
+}import { useState } from "react";
+
+const footerData = [
+  {
+    title: "Kategori",
+    links: [
+      "Digital & Teknologi",
+      "Pemasaran",
+      "Manajemen Bisnis",
+      "Pengembangan Diri",
+      "Desain",
+    ],
+  },
+  {
+    title: "Perusahaan",
+    links: [
+      "Tentang Kami",
+      "FAQ",
+      "Kebijaksanaan Privasi",
+      "Ketentuan Layanan",
+      "Bantuan",
+    ],
+  },
+  {
+    title: "Komunitas",
+    links: ["Tips Sukses", "Blog"],
+  },
+];
+
+function FooterColumn({ title, links }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className={`footer-column ${isOpen ? "open" : ""}`}>
+      <button
+        type="button"
+        className="footer-column-title"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {title}
+        <i className="bi bi-chevron-right" />
+      </button>
+
+      <div className="footer-links">
+        {links.map((link) => (
+          <a href={`#${link}`} key={link}>
+            {link}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function Footer() {
+  return (
+    <footer className="footer-section">
+      <div className="footer-container">
+        <div className="footer-top">
+          <div className="footer-info">
+            <img
+              src="/assets/img/logo.svg"
+              alt="Logo Videobelajar"
+              className="footer-logo"
+            />
+
+            <p className="footer-description">
+              Gali Potensi Anda Melalui Pembelajaran Video di hariesok.id!
+            </p>
+
+            <p>JL. Usman Effendi No. 50, Malang</p>
+            <p>+62-877-7123-1234</p>
+          </div>
+
+          <div className="footer-menu">
+            {footerData.map((item) => (
+              <FooterColumn
+                key={item.title}
+                title={item.title}
+                links={item.links}
+              />
+            ))}
+          </div>
+        </div>
+
+        <hr />
+
+        <div className="footer-bottom">
+          <p>@ 2026 Devi Oktavia Rahayu. All Right Reserved.</p>
+
+          <div className="social-icons">
+            <a href="#linkedin" aria-label="LinkedIn">
+              <i className="bi bi-linkedin" />
+            </a>
+            <a href="#facebook" aria-label="Facebook">
+              <i className="bi bi-facebook" />
+            </a>
+            <a href="#instagram" aria-label="Instagram">
+              <i className="bi bi-instagram" />
+            </a>
+            <a href="#twitter" aria-label="Twitter">
+              <i className="bi bi-twitter-x" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Offcanvas from "react-bootstrap/Offcanvas";
+
+export default function AppNavbar({ isHome = false }) {
+  return (
+    <Navbar expand="lg" className="app-navbar sticky-top">
+      <Container>
+        <Navbar.Brand as={Link} to={isHome ? "/beranda" : "/login"}>
+          <img
+            src="/assets/img/logo.svg"
+            alt="Logo Videobelajar"
+            className="brand-logo"
+          />
+        </Navbar.Brand>
+
+        {isHome ? (
+          <>
+            <div className="desktop-menu">
+              <span className="kategori-text">Kategori</span>
+
+              <img
+                src="/assets/img/Avatar.png"
+                alt="Avatar pengguna"
+                className="avatar-img"
+              />
+            </div>
+
+            <Navbar.Toggle
+              aria-controls="mobile-navbar"
+              className="mobile-toggle"
+            />
+
+            <Navbar.Offcanvas
+              id="mobile-navbar"
+              placement="end"
+              aria-labelledby="mobile-navbar-title"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id="mobile-navbar-title">
+                  Menu
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+
+              <Offcanvas.Body>
+                <Nav className="flex-column gap-3">
+                  <Nav.Link as={Link} to="/beranda">
+                    Beranda
+                  </Nav.Link>
+                  <Nav.Link href="#koleksi-kelas">
+                    Koleksi Kelas
+                  </Nav.Link>
+                  <Nav.Link href="#newsletter">
+                    Newsletter
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/login">
+                    Keluar
+                  </Nav.Link>
+                </Nav>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </>
+        ) : null}
+      </Container>
+    </Navbar>
+  );
+}import Form from "react-bootstrap/Form";
+import { useState } from "react";
+
+export default function PasswordField({
+  id,
+  label,
+  value,
+  onChange,
+  placeholder = "",
+}) {
+  const [showPassword, setShowPassword] = useState(false);
+
+  return (
+    <Form.Group className="mb-3">
+      <Form.Label htmlFor={id}>
+        {label} <span className="required">*</span>
+      </Form.Label>
+
+      <div className="password-wrapper">
+        <Form.Control
+          id={id}
+          name={id}
+          type={showPassword ? "text" : "password"}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          required
+        />
+
+        <button
+          type="button"
+          className="password-toggle"
+          onClick={() => setShowPassword(!showPassword)}
+          aria-label={showPassword ? "Sembunyikan password" : "Tampilkan password"}
+        >
+          <i className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`} />
+        </button>
+      </div>
+    </Form.Group>
+  );
+}import { useState } from "react";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+
+import PasswordField from "./PasswordField";
+
+export default function AuthForm({ type }) {
+  const isLogin = type === "login";
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    gender: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const [dialCode, setDialCode] = useState("+62");
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (
+      !isLogin &&
+      formData.password !== formData.confirmPassword
+    ) {
+      alert("Konfirmasi kata sandi tidak sama.");
+      return;
+    }
+
+    alert(
+      isLogin
+        ? "Login berhasil untuk prototype statis."
+        : "Registrasi berhasil untuk prototype statis."
+    );
+  };
+
+  return (
+    <div className={isLogin ? "auth-card login-card" : "auth-card register-card"}>
+      <h1>{isLogin ? "Masuk ke Akun" : "Pendaftaran Akun"}</h1>
+
+      <p className="subtitle">
+        {isLogin
+          ? "Yuk, lanjutin belajarmu di videobelajar"
+          : "Yuk, daftarkan akunmu sekarang juga!"}
+      </p>
+
+      <Form onSubmit={handleSubmit}>
+        {!isLogin && (
+          <Form.Group className="mb-3">
+            <Form.Label htmlFor="name">
+              Nama Lengkap <span className="required">*</span>
+            </Form.Label>
+
+            <Form.Control
+              id="name"
+              name="name"
+              type="text"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
+        )}
+
+        <Form.Group className="mb-3">
+          <Form.Label htmlFor={`${type}-email`}>
+            Email <span className="required">*</span>
+          </Form.Label>
+
+          <Form.Control
+            id={`${type}-email`}
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Masukkan email"
+            autoComplete="email"
+            required
+          />
+        </Form.Group>
+
+        {!isLogin && (
+          <>
+            <Form.Group className="mb-3 gender-field">
+              <Form.Label htmlFor="gender">
+                Jenis Kelamin <span className="required">*</span>
+              </Form.Label>
+
+              <Form.Select
+                id="gender"
+                name="gender"
+                value={formData.gender}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Pilih Jenis Kelamin</option>
+                <option value="pria">Pria</option>
+                <option value="wanita">Wanita</option>
+              </Form.Select>
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="phone">
+                No. Hp <span className="required">*</span>
+              </Form.Label>
+
+              <div className="phone-group">
+                <Form.Select
+                  value={dialCode}
+                  onChange={(event) => setDialCode(event.target.value)}
+                  className="dial-code"
+                >
+                  <option value="+62">🇮🇩 +62</option>
+                  <option value="+65">🇸🇬 +65</option>
+                  <option value="+60">🇲🇾 +60</option>
+                  <option value="+66">🇹🇭 +66</option>
+                </Form.Select>
+
+                <Form.Control
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Masukkan nomor HP"
+                  required
+                />
+              </div>
+            </Form.Group>
+          </>
+        )}
+
+        <PasswordField
+          id={`${type}-password`}
+          label={isLogin ? "Password" : "Kata Sandi"}
+          value={formData.password}
+          onChange={(event) =>
+            setFormData((previous) => ({
+              ...previous,
+              password: event.target.value,
+            }))
+          }
+          placeholder="Masukkan password"
+        />
+
+        {!isLogin && (
+          <PasswordField
+            id="confirm-password"
+            label="Konfirmasi Kata Sandi"
+            value={formData.confirmPassword}
+            onChange={(event) =>
+              setFormData((previous) => ({
+                ...previous,
+                confirmPassword: event.target.value,
+              }))
+            }
+            placeholder="Ulangi password"
+          />
+        )}
+
+        <div className="form-action">
+          <a href="#forgot-password">Lupa Password?</a>
+        </div>
+
+        <Button type="submit" className="primary-auth-button">
+          {isLogin ? "Masuk" : "Daftar"}
+        </Button>
+
+        <Button
+          as={Link}
+          to={isLogin ? "/register" : "/login"}
+          type="button"
+          className="secondary-auth-button"
+        >
+          {isLogin ? "Daftar" : "Masuk"}
+        </Button>
+
+        <div className="divider">
+          <span>Atau</span>
+        </div>
+
+        <Button type="button" className="google-button">
+          <i className="bi bi-google" />
+          Masuk dengan Google
+        </Button>
+      </Form>
+    </div>
+  );
+}import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "./app.css";
+
+import App from "./App.jsx";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);import { Navigate, Route, Routes } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import HomePage from "./pages/HomePage";
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/beranda" element={<HomePage />} />
+    </Routes>
+  );
+}const defaultDescription =
+  "Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan kurikulum terbaik";
+
+export const courses = [
+  {
+    id: 1,
+    image: "/assets/img/course1.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-2.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 2,
+    image: "/assets/img/course2.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-3.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 3,
+    image: "/assets/img/course3.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-3.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 4,
+    image: "/assets/img/course4.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-4.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 5,
+    image: "/assets/img/course5.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-5.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 6,
+    image: "/assets/img/course6.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-6.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 7,
+    image: "/assets/img/course7.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-7.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 8,
+    image: "/assets/img/course8.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-8.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+  {
+    id: 9,
+    image: "/assets/img/course9.png",
+    title: "Big 4 Auditor Financial Analyst",
+    description: defaultDescription,
+    mentorImage: "/assets/img/Avatar-9.png",
+    mentorName: "Jenna Ortega",
+    mentorRole: "Senior Accountant di Gojek",
+    price: "Rp 300K",
+  },
+];import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
+import AppNavbar from "../components/AppNavbar";
+import HeroSection from "../components/HeroSection";
+import SectionHeader from "../components/SectionHeader";
+import CourseCard from "../components/CourseCard";
+import NewsletterBanner from "../components/NewsletterBanner";
+import Footer from "../components/Footer";
+
+import { courses } from "../data/courses";
+
+export default function HomePage() {
+  return (
+    <>
+      <AppNavbar isHome />
+
+      <main>
+        <HeroSection />
+
+        <section className="courses-section" id="koleksi-kelas">
+          <Container>
+            <SectionHeader />
+
+            <div className="tabs-container">
+              <button className="tab-item active">Semua Kelas</button>
+              <button className="tab-item">Pemasaran</button>
+              <button className="tab-item">Desain</button>
+              <button className="tab-item">Pengembangan Diri</button>
+              <button className="tab-item">Bisnis</button>
+            </div>
+
+            <Row className="g-4">
+              {courses.map((course) => (
+                <Col xs={12} md={6} lg={4} key={course.id}>
+                  <CourseCard {...course} />
+                </Col>
+              ))}
+            </Row>
+
+            <NewsletterBanner />
+          </Container>
+        </section>
+      </main>
+
+      <Footer />
+    </>
+  );
+}import Container from "react-bootstrap/Container";
+
+import AppNavbar from "../components/AppNavbar";
+import AuthForm from "../components/AuthForm";
+
+export default function LoginPage() {
+  return (
+    <>
+      <AppNavbar />
+
+      <main className="auth-wrapper">
+        <Container className="auth-container">
+          <AuthForm type="login" />
+        </Container>
+      </main>
+    </>
+  );
+}import Container from "react-bootstrap/Container";
+
+import AppNavbar from "../components/AppNavbar";
+import AuthForm from "../components/AuthForm";
+
+export default function RegisterPage() {
+  return (
+    <>
+      <AppNavbar />
+
+      <main className="auth-wrapper">
+        <Container className="auth-container">
+          <AuthForm type="register" />
+        </Container>
+      </main>
+    </>
+  );
+}
