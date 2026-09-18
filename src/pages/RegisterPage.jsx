@@ -7,7 +7,6 @@ export default function RegisterPage() {
   const navigate = useNavigate();
 
   const handleRegister = (formData) => {
-    // Simpan data pendaftaran ke localStorage agar sync dengan ProfilePage
     localStorage.setItem('userProfile', JSON.stringify({
       name: formData.fullName,
       email: formData.email,

@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 const BASE_URL = 'https://6a996fe553c0481726b94c42.mockapi.io/courses';

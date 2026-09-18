@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-// Tambahkan prop isAuthPage (default-nya false)
 export default function AppNavbar({ isAuthPage = false }) {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -17,12 +16,12 @@ export default function AppNavbar({ isAuthPage = false }) {
     <header className="navbar" style={{ padding: '16px 40px', backgroundColor: '#fff', borderBottom: '1px solid #eee', position: 'relative' }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         
-        {/* LOGO (Selalu tampil di semua halaman) */}
+        {/* LOGO */}
         <Link to="/" style={{ textDecoration: 'none' }}>
           <img src="/images/Logo.svg" alt="videobelajar" style={{ height: '36px' }} />
         </Link>
 
-        {/* JIKA BUKAN AUTH PAGE: Tampilkan menu Kategori & Avatar */}
+        {/* MENU UTAMA */}
         {!isAuthPage && (
           <div style={{ display: 'flex', alignItems: 'center', gap: '24px', position: 'relative' }}>
             <span style={{ fontSize: '14px', fontWeight: '500', color: '#666', cursor: 'pointer' }}>Kategori</span>
